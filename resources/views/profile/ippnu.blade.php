@@ -8,16 +8,16 @@
     <div class="grid lg:grid-cols-3 gap-12">
         <!-- Main Content -->
         <div class="lg:col-span-2">
-            <h1 class="text-2xl font-semibold">IPPNU Profile</h1>
-            <p class="mt-4">Welcome to the IPPNU profile page. Below you can find more information about IPPNU and its activities.</p>
+            <h1 class="text-2xl font-semibold">Susunan Kepengurusan</h1>
+            <p class="mt-4">Welcome to the HMI profile page. Below you can find more information about HMI and its activities.</p>
 
             <!-- Image -->
-            <div class="mt-6">
+            {{-- <div class="mt-6">
                 <img src="{{ asset('template/images/2.png') }}" alt="IPPNU Logo" class="w-full h-auto rounded-lg shadow-md">
-            </div>
+            </div> --}}
 
             <!-- Article -->
-            <div class="mt-8">
+            {{-- <div class="mt-8">
                 <h2 class="text-xl font-bold mb-4">About IPPNU</h2>
                 <p class="text-gray-600 text-justify">
                     The Indonesian Muslim Student Women's Association (IPPNU) is an organization formed by Muslim women students in
@@ -36,7 +36,7 @@
                     strives to
                     empower youth through active participation and leadership development.
                 </p>
-            </div>
+            </div> --}}
         </div>
 
 

@@ -2,14 +2,17 @@
     <div class="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
-                <div class="flex justify-center text-teal-600 sm:justify-start">
-                    <img src="{{ asset('template/images/logo-5.svg') }}" alt="" class="w-90 h-90 filter invert dark:invert-0">
-
+                <div class="flex items-center text-teal-600">
+                    <img src="{{ asset('template/images/logo-web.png') }}" alt="Logo Footer"
+                        class="w-20 h-20 mr-4 filter  dark:invert-0">
+                    <p class="text-black text-3xl font-semibold leading-relaxed dark:text-white">
+                        HMI Cabang Ponorogo
+                    </p>
                 </div>
 
                 <p class="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-                    consequuntur amet culpa cum itaque neque.
+                    Himpunan Mahasiswa Islam (HMI) adalah organisasi mahasiswa yang bertujuan menciptakan generasi
+                    berilmu, berintegritas, dan berkontribusi untuk masyarakat, bangsa, dan negara.
                 </p>
 
                 <ul class="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
@@ -75,7 +78,7 @@
             </div>
 
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2 ">
-                <div class="text-center sm:text-left ">
+                {{-- <div class="text-center sm:text-left ">
                     <p class="text-lg font-medium text-gray-900 dark:text-white">About Us</p>
 
                     <ul class="mt-8 space-y-4 text-sm ">
@@ -107,9 +110,9 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
 
-                <div class="text-center sm:text-left">
+                {{-- <div class="text-center sm:text-left">
                     <p class="text-lg font-medium text-gray-900 dark:text-white">Our Services</p>
 
                     <ul class="mt-8 space-y-4 text-sm">
@@ -141,7 +144,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
 
                 <div class="text-center sm:text-left">
                     <p class="text-lg font-medium text-gray-900 dark:text-white">Lokasi</p>
@@ -151,11 +154,11 @@
                             <a href="#" class="text-gray-700 transition hover:text-gray-700/75">
                                 <div class="relative">
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.3221686549405!2d111.32326547513465!3d-7.648463775666502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e799236763b8383%3A0x5ec42f082765f77c!2sKantor%20PCNU%20Magetan!5e0!3m2!1sid!2sid!4v1736256493955!5m2!1sid!2sid"
-                                        class="w-full h-48 sm:w-96 sm:h-48 md:w-96 md:h-48 rounded-lg"
-                                        style="border:0;" allowfullscreen="" loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade">
+                                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3952.3526033590856!2d111.49908107513767!3d-7.858117678110624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwNTEnMjkuMiJTIDExMcKwMzAnMDYuMCJF!5e0!3m2!1sid!2sid!4v1736426093757!5m2!1sid!2sid"
+                                        class="w-full h-48 sm:w-96 sm:h-48 md:w-96 md:h-48 rounded-lg" style="border:0;"
+                                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                     </iframe>
+
                                 </div>
                             </a>
                         </li>
@@ -172,7 +175,7 @@
         <div class="mt-12 border-t border-gray-800 pt-6">
             <div class="text-center">
                 <p class="text-sm text-gray-500 dark:text-gray-400">
-                    &copy; {{ date('Y') }} | Media PC Ipnu Ippnu Magetan
+                    &copy; {{ date('Y') }} | Media HMI Cabang Ponorogo
                 </p>
             </div>
         </div>

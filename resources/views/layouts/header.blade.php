@@ -4,14 +4,14 @@
         <!-- Logo tampil di mobile dan desktop -->
         <a href="/">
             <div class="p-2 rounded-lg">
-                <img src="{{ asset('template/images/logo-2.svg') }}" alt=""
-                    class="w-10 h-10 filter invert dark:invert-0">
+                <img src="{{ asset('template/images/logo-web.png') }}" alt=""
+                    class="w-10 h-10 filter">
             </div>
         </a>
 
         <!-- Teks hanya tampil di desktop -->
         <a href="/">
-            <span class="text-xl font-bold hidden md:block">Ipnu Ippnu</span>
+            <span class="text-xl font-bold hidden md:block">HMI CABANG PONOROGO</span>
         </a>
     </div>
     <!-- Menu Links (hidden on mobile, shown on larger screens) -->
@@ -31,8 +31,8 @@
                 </span>
                 <!-- Dropdown Menu -->
                 <div id="dropdownMenu" class="absolute left-0 hidden mt-2 space-y-2 bg-white border rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    <a href="{{ route('profile.ipnu') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">IPNU</a>
-                    <a href="{{ route('profile.ippnu') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">IPPNU</a>
+                    <a href="{{ route('profile.ipnu') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Sejarah</a>
+                    <a href="{{ route('profile.ippnu') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Susunan Kepengurusan</a>
                 </div>
             </div>
     </div>
