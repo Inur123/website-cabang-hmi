@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function ipnu()
+    public function sejarah()
     {
         // Fetch categories and popular posts from the database
         $categories = Category::all(); // You can change this query based on your requirements
@@ -18,14 +18,14 @@ class ProfileController extends Controller
         $popularPosts = Post::orderBy('visits', 'desc')->take(5)->get();  // Example for most popular posts
 
         // Pass data to the view
-        return view('profile.ipnu', [
+        return view('profile.sejarah', [
             'categories' => $categories,
             'totalCategoriesCount' => $totalCategoriesCount,
             'popularPosts' => $popularPosts,
         ]);
     }
     // Show the IPPNU profile view
-    public function ippnu()
+    public function susunankepengurusan()
     {
         $categories = Category::all(); // You can change this query based on your requirements
         $totalCategoriesCount = $categories->count();
@@ -34,7 +34,7 @@ class ProfileController extends Controller
         $popularPosts = Post::orderBy('visits', 'desc')->take(5)->get();  // Example for most popular posts
 
         // Pass data to the view
-        return view('profile.ippnu', [
+        return view('profile.susunankepengurusan', [
             'categories' => $categories,
             'totalCategoriesCount' => $totalCategoriesCount,
             'popularPosts' => $popularPosts,

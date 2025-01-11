@@ -31,8 +31,8 @@
                 </span>
                 <!-- Dropdown Menu -->
                 <div id="dropdownMenu" class="absolute left-0 hidden mt-2 space-y-2 bg-white border rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    <a href="{{ route('profile.ipnu') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Sejarah</a>
-                    <a href="{{ route('profile.ippnu') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Susunan Kepengurusan</a>
+                    <a href="{{ route('profile.sejarah') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Sejarah</a>
+                    <a href="{{ route('profile.susunankepengurusan') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Susunan Kepengurusan</a>
                 </div>
             </div>
     </div>

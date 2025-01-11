@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('template/images/logo-1.png') }}" />
+    <link rel="icon" href="{{ asset('template/images/logo-web.png') }}" />
     <title>HMI CABANG PONOROGO</title>
 </head>
 

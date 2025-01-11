@@ -33,9 +33,9 @@
         class="relative h-96 md:h-[400px] rounded-lg hidden sm:block animate__animated animate__fadeIn animate__delay-900ms">
         <!-- Wrapper for smooth transition -->
         <div class="relative w-full h-full">
-            <img id="image-slider-1" src="{{ asset('template/images/1.png') }}" alt="IPNU  Members"
+            <img id="image-slider-1" src="{{ asset('template/images/4.jpeg') }}" alt="IPNU  Members"
                 class="object-cover w-full h-full rounded transition-opacity duration-1000 opacity-100 absolute inset-0">
-            <img id="image-slider-2" src="{{ asset('template/images/2.png') }}" alt="IPPNU Members"
+            <img id="image-slider-2" src="{{ asset('template/images/3.jpeg') }}" alt="IPPNU Members"
                 class="object-cover w-full h-full rounded transition-opacity duration-1000 opacity-0 absolute inset-0">
         </div>
     </div>
@@ -81,6 +81,7 @@
             </div>
         </div>
 
+
         <div class="flex items-start space-x-4">
             <div class="bg-pink-100 dark:bg-pink-900 p-4 rounded-full" data-aos="zoom-in">
 
@@ -97,6 +98,7 @@
                 </p>
             </div>
         </div>
+
     </div>
 </div>
 <div class="container mx-auto text-center mb-6" data-aos="fade-up">
@@ -128,11 +130,11 @@
             negara. Organisasi ini berkomitmen untuk memperjuangkan nilai-nilai Islam sebagai pedoman universal dalam
             kehidupan bermasyarakat, berbangsa, dan bernegara.
         </p>
-        <a href="#"
-            class="inline-block px-6 py-2 text-gray-700 bg-white rounded-lg shadow border border-gray-300 transition hover:border-blue-500"
-            data-aos="fade-left">
-            Detail
-        </a>
+        <a href="https://online.flippingbook.com/view/420795888/"
+        class="inline-block px-6 py-2 text-gray-700 bg-white rounded-lg shadow border border-gray-300 transition hover:border-blue-500"
+        data-aos="fade-left"  target="_blank">
+        Detail
+    </a>
     </div>
 </div>
 
@@ -252,13 +254,14 @@
 
 
 <div class="container mx-auto px-6 py-12">
-    <div class="flex justify-between items-center mb-8">
+    <div class="flex justify-between  items-center mb-8">
         <h1 class="text-3xl font-bold" data-aos="fade-right">Most Popular Posts</h1>
         <a href="/blog" class="text-blue-500 hover:underline" data-aos="fade-left">Lihat Lainnya</a>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         @foreach ($popularPosts as $popularPost)
-            <!-- Blog Post 1 -->
+        <div class="container mx-auto px-4">
+            <a href="{{ route('blog.show', $popularPost->slug) }}" class="block">
             <article
                 class="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-900 dark:text-gray-100 border dark:border-gray-700  hover:border-blue-500 dark:hover:border-gray-300 "
                 data-aos="zoom-in">
@@ -289,6 +292,8 @@
                 </div>
                 </a>
             </article>
+            </a>
+        </div>
         @endforeach
     </div>
 </div>
