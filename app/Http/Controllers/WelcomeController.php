@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -14,8 +15,10 @@ class WelcomeController extends Controller
             ->orderBy('visits', 'desc') // Sort by the views column in descending order
             ->take(3) // Limit to the top 3 most viewed posts
             ->get();
-
+        $kegiatans = Kegiatan::orderBy('created_at', 'desc') // Sort by the creation date (newest first)
+            ->take(4) // Limit to the top 3 most recent activities
+            ->get();
         // Return the view with the posts data
-        return view('welcome', compact('popularPosts'));
+        return view('welcome', compact('popularPosts','kegiatans'));
     }
 }

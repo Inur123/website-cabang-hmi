@@ -144,57 +144,55 @@
 </div>
 <!-- kegiatan -->
 <div class="grid grid-cols-1 container mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-5">
+    @foreach($kegiatans as $kegiatan)
     <article class="group" data-aos="zoom-in">
         <div class="p-2">
-            <img alt="" src="{{ asset('template/images/kegiatan1.jpeg') }}"
-                class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
+            @if($kegiatan->gambar)
+                <img alt="{{ $kegiatan->nama }}" src="{{ asset('storage/' . $kegiatan->gambar) }}"
+                    class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
+            @endif
         </div>
 
         <div class="p-4">
-            {{-- <a href="#">
-                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
-                    Finding the Journey to Mordor
-                </h3>
-            </a> --}}
-
             <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
-                Sosialisasi dan Koordinasi Tentang Pengelolaan Administrasi, Kesekretariatan, dan Keprotokoleran oleh Pengurus Himpunan Mahasiswa Islam Cabang Ponorogo.
+                {{ Str::limit($kegiatan->deskripsi, 100) }}
             </p>
         </div>
     </article>
+@endforeach
 
     <!-- Duplicate this article block for more cards -->
-    <article class="group" data-aos="zoom-in">
+    {{-- <article class="group" data-aos="zoom-in">
         <div class="p-2">
            <img alt="" src="{{ asset('template/images/kegiatan2.jpeg') }}"
                 class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
         </div>
 
         <div class="p-4">
-            {{-- <a href="#">
+            <a href="#">
                 <h3 class="text-lg font-medium text-gray-900 dark:text-white">
                     Finding the Journey to Mordor
                 </h3>
-            </a> --}}
+            </a>
 
             <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
                 Dokumentasi Opening Ceremony Intermediate Training Latihan Kader 2 Himpunan Mahasiswa Islam Cabang Ponorogo
             </p>
         </div>
-    </article>
+    </article> --}}
 
-    <article class="group" data-aos="zoom-in">
+    {{-- <article class="group" data-aos="zoom-in">
         <div class="p-2">
             <img alt="" src="{{ asset('template/images/kegiatan3.jpeg') }}"
                 class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
         </div>
 
         <div class="p-4">
-            {{-- <a href="#">
+            <a href="#">
                 <h3 class="text-lg font-medium text-gray-900 dark:text-white">
                     Finding the Journey to Mordor
                 </h3>
-            </a> --}}
+            </a>
 
             <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
                 Dokumentasi Kelas Training
@@ -202,20 +200,20 @@
                 Himpunan Mahasiswa Islam Cabang Ponorogo
             </p>
         </div>
-    </article>
+    </article> --}}
 
-    <article class="group" data-aos="zoom-in">
+    {{-- <article class="group" data-aos="zoom-in">
         <div class="p-2">
            <img alt="" src="{{ asset('template/images/kegiatan4.jpeg') }}"
                 class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
         </div>
 
         <div class="p-4">
-            {{-- <a href="#">
+            <a href="#">
                 <h3 class="text-lg font-medium text-gray-900 dark:text-white">
                     Finding the Journey to Mordor
                 </h3>
-            </a> --}}
+            </a>
 
             <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
                 Dokumentasi Closing Ceremony
@@ -223,7 +221,7 @@
                 Himpunan Mahasiswa Islam Cabang Ponorogo
             </p>
         </div>
-    </article>
+    </article> --}}
 </div>
 <div class="container mx-auto text-center mb-1" data-aos="fade-up">
     <h2 class="text-4xl font-semibold text-gray-900  dark:text-white">Ketua Umum</h2>
