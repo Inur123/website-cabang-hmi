@@ -140,93 +140,37 @@
 
 
 <div class="container mx-auto text-center mb-6" data-aos="fade-up">
-    <h2 class="text-2xl font-semibold text-gray-900  dark:text-white">Kegiatan</h2>
+    <h2 class="text-3xl font-semibold text-gray-900  dark:text-white">Kegiatan</h2>
 </div>
 <!-- kegiatan -->
-<div class="grid grid-cols-1 container mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-5">
-    @foreach($kegiatans as $kegiatan)
-    <article class="group" data-aos="zoom-in">
-        <div class="p-2">
-            @if($kegiatan->gambar)
-                <img alt="{{ $kegiatan->nama }}" src="{{ asset('storage/' . $kegiatan->gambar) }}"
-                    class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
-            @endif
-        </div>
-
-        <div class="p-4">
-            <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
-                {{ Str::limit($kegiatan->deskripsi, 100) }}
-            </p>
-        </div>
-    </article>
-@endforeach
-
-    <!-- Duplicate this article block for more cards -->
-    {{-- <article class="group" data-aos="zoom-in">
-        <div class="p-2">
-           <img alt="" src="{{ asset('template/images/kegiatan2.jpeg') }}"
-                class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
-        </div>
-
-        <div class="p-4">
-            <a href="#">
-                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
-                    Finding the Journey to Mordor
-                </h3>
-            </a>
-
-            <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
-                Dokumentasi Opening Ceremony Intermediate Training Latihan Kader 2 Himpunan Mahasiswa Islam Cabang Ponorogo
-            </p>
-        </div>
-    </article> --}}
-
-    {{-- <article class="group" data-aos="zoom-in">
-        <div class="p-2">
-            <img alt="" src="{{ asset('template/images/kegiatan3.jpeg') }}"
-                class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
-        </div>
-
-        <div class="p-4">
-            <a href="#">
-                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
-                    Finding the Journey to Mordor
-                </h3>
-            </a>
-
-            <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
-                Dokumentasi Kelas Training
-                Intermediate Training Latihan Kader 2
-                Himpunan Mahasiswa Islam Cabang Ponorogo
-            </p>
-        </div>
-    </article> --}}
-
-    {{-- <article class="group" data-aos="zoom-in">
-        <div class="p-2">
-           <img alt="" src="{{ asset('template/images/kegiatan4.jpeg') }}"
-                class="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]" />
-        </div>
-
-        <div class="p-4">
-            <a href="#">
-                <h3 class="text-lg font-medium text-gray-900 dark:text-white">
-                    Finding the Journey to Mordor
-                </h3>
-            </a>
-
-            <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
-                Dokumentasi Closing Ceremony
-                Intermediate Training Latihan Kader 2
-                Himpunan Mahasiswa Islam Cabang Ponorogo
-            </p>
-        </div>
-    </article> --}}
+<div class="container mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 mb-4">
+    @foreach ($kegiatans as $kegiatan)
+    <div class="container mx-auto px-4">
+        <article class="bg-white rounded-lg overflow-hidden shadow-lg dark:bg-gray-900 dark:text-gray-100 border dark:border-gray-700 hover:border-blue-500 dark:hover:border-gray-300" data-aos="zoom-in">
+            <div class="relative h-48">
+                @if($kegiatan->gambar)
+                    <img src="{{ asset('storage/' . $kegiatan->gambar) }}" alt="{{ $kegiatan->nama }}" class="object-cover w-full h-full rounded-t-lg">
+                @endif
+            </div>
+            <div class="p-6">
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400 line-clamp-3">
+                    {{ \Illuminate\Support\Str::limit($kegiatan->deskripsi, 100) }}
+                </p>
+            </div>
+        </article>
+    </div>
+    @endforeach
 </div>
-<div class="container mx-auto text-center mb-1" data-aos="fade-up">
+
+
+
+
+
+
+<div class="container mx-auto text-center mt-10 mb-5" data-aos="fade-up">
     <h2 class="text-4xl font-semibold text-gray-900  dark:text-white">Ketua Umum</h2>
 </div>
-<div class="container mx-auto py-12 px-8">
+<div class="container mx-auto ">
     <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden dark:bg-gray-800 dark:text-gray-100">
         <div class="flex flex-col lg:flex-row items-center">
             <!-- Bagian Kiri (Logo) -->
@@ -256,7 +200,7 @@
         <h1 class="text-3xl font-bold" data-aos="fade-right">Most Popular Posts</h1>
         <a href="/blog" class="text-blue-500 hover:underline" data-aos="fade-left">Lihat Lainnya</a>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
         @foreach ($popularPosts as $popularPost)
         <div class="container mx-auto px-4">
             <a href="{{ route('blog.show', $popularPost->slug) }}" class="block">

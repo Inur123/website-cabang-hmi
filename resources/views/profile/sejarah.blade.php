@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 
-
 @include('layouts.header')
 
 <div class="container mx-auto px-6 py-12">

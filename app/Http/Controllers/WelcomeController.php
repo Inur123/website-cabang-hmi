@@ -16,7 +16,6 @@ class WelcomeController extends Controller
             ->take(3) // Limit to the top 3 most viewed posts
             ->get();
         $kegiatans = Kegiatan::orderBy('created_at', 'desc') // Sort by the creation date (newest first)
-            ->take(4) // Limit to the top 3 most recent activities
             ->get();
         // Return the view with the posts data
         return view('welcome', compact('popularPosts','kegiatans'));

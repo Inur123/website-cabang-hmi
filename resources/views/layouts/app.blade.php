@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('template/images/logo-web.png') }}" />
+    <!-- Swiper.js CDN -->
+
+
+    {{-- <link rel="icon" href="{{ asset('template/images/logo-web.png') }}" /> --}}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('template/images/logo-web.png') }}">
+
+
     <title>HMI CABANG PONOROGO</title>
 </head>
 
 <body class="min-h-screen bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <div id="loadingSpinner" class="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-50 z-50">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
+    </div>
     <!-- <div id="banner" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center">
     <div class="relative w-full h-full">
 
@@ -61,6 +70,10 @@
         });
     </script>
     <script>
+          window.onload = function() {
+            // Hide the loading spinner after the page has fully loaded
+            document.getElementById('loadingSpinner').classList.add('hidden');
+        };
         document.addEventListener('DOMContentLoaded', function() {
     const profileBtn = document.getElementById('profileBtn');
     const dropdownMenu = document.getElementById('dropdownMenu');
