@@ -5,18 +5,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="{{ $post->title ?? 'Default Title' }}">
-<meta property="og:description" content="{{ Str::limit(strip_tags($post->content ?? 'Default Description'), 150) }}">
-<meta property="og:image" content="{{ isset($post->thumbnail) ? asset('storage/' . $post->thumbnail) : asset('images/default-image.jpg') }}">
-<meta property="og:url" content="{{ url()->current() }}">
-<meta property="og:type" content="article">
+    <meta property="og:description" content="{{ Str::limit(strip_tags($post->content ?? 'Default Description'), 150) }}">
+    <meta property="og:image"
+        content="{{ isset($post->thumbnail) ? asset('storage/' . $post->thumbnail) : asset('images/default-image.jpg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="article">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Swiper.js CDN -->
 
+    <link rel="icon" href="{{ asset('template/images/logo-web.png') }}" type="image/png">
 
-    {{-- <link rel="icon" href="{{ asset('template/images/logo-web.png') }}" /> --}}
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('template/images/logo-web.png') }}">
 
+    <meta property="og:image" content="{{ asset('template/images/logo-web.png') }}">
+    <meta property="og:title" content="Himpunan Mahasiswa Islam Cabang Ponorogo">
+    <meta property="og:description"
+        content=" Himpunan Mahasiswa Islam (HMI) Cabang Ponorogo adalah salah satu cabang organisasi mahasiswa Islam terbesar
+            di Indonesia, yang berada di wilayah Ponorogo. Sebagai bagian dari HMI, cabang ini memiliki peran penting
+            dalam mewadahi aspirasi, pengembangan intelektual, dan pembinaan keislaman mahasiswa di daerah tersebut.">
 
     <title>HMI CABANG PONOROGO</title>
 </head>
@@ -75,36 +81,36 @@
         });
     </script>
     <script>
-          window.onload = function() {
+        window.onload = function() {
             // Hide the loading spinner after the page has fully loaded
             document.getElementById('loadingSpinner').classList.add('hidden');
         };
         document.addEventListener('DOMContentLoaded', function() {
-    const profileBtn = document.getElementById('profileBtn');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const arrowIcon = document.getElementById('arrowIcon');
+            const profileBtn = document.getElementById('profileBtn');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const arrowIcon = document.getElementById('arrowIcon');
 
-    if (profileBtn && dropdownMenu && arrowIcon) {
-        // Toggle dropdown on profile button click
-        profileBtn.addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevent the click from closing the dropdown immediately
+            if (profileBtn && dropdownMenu && arrowIcon) {
+                // Toggle dropdown on profile button click
+                profileBtn.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Prevent the click from closing the dropdown immediately
 
-            // Toggle dropdown visibility
-            dropdownMenu.classList.toggle('hidden');
-            // Rotate the arrow icon
-            arrowIcon.classList.toggle('rotate-180');
-        });
+                    // Toggle dropdown visibility
+                    dropdownMenu.classList.toggle('hidden');
+                    // Rotate the arrow icon
+                    arrowIcon.classList.toggle('rotate-180');
+                });
 
-        // Close dropdown if clicked outside
-        window.addEventListener('click', function(event) {
-            // Close dropdown if the click is outside the profile button and dropdown
-            if (!profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.add('hidden');
-                arrowIcon.classList.remove('rotate-180');
+                // Close dropdown if clicked outside
+                window.addEventListener('click', function(event) {
+                    // Close dropdown if the click is outside the profile button and dropdown
+                    if (!profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                        dropdownMenu.classList.add('hidden');
+                        arrowIcon.classList.remove('rotate-180');
+                    }
+                });
             }
         });
-    }
-});
     </script>
 </body>
 
