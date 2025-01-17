@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+<meta property="og:title" content="{{ $post->title ?? 'Default Title' }}">
+<meta property="og:description" content="{{ Str::limit(strip_tags($post->content ?? 'Default Description'), 150) }}">
+<meta property="og:image" content="{{ isset($post->thumbnail) ? asset('storage/' . $post->thumbnail) : asset('images/default-image.jpg') }}">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:type" content="article">
 
 
 @include('layouts.header')
