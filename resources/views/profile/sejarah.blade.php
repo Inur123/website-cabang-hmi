@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
-
-@include('layouts.header')
-
+@section('title', 'Sejarah - HMI CABANG PONOROGO')
+@section('content')
 <div class="container mx-auto px-6 py-12">
     <div class="grid lg:grid-cols-3 gap-12">
         <!-- Main Content -->
@@ -10,8 +8,6 @@
             <h1 class="text-2xl font-semibold">Sejarah</h1>
             <p class="mt-4">Welcome to the HMI profile page. Below you can find more information about HMI and its activities.</p>
         </div>
-
-
         @include('layouts.sidebar')
     </div>
 </div>
@@ -34,4 +30,4 @@
         document.getElementById('see-less-btn').classList.add('hidden');
     });
 </script>
-@include('layouts.footer')
+@endsection

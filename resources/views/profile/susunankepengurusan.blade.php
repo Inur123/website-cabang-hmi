@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
-
-
-@include('layouts.header')
+@section('title', 'Susunan Kepengurusan - HMI CABANG PONOROGO')
+@section('content')
 
 <div class="container mx-auto px-6 py-12">
     <div class="grid lg:grid-cols-3 gap-12">
@@ -36,4 +34,4 @@
         document.getElementById('see-less-btn').classList.add('hidden');
     });
 </script>
-@include('layouts.footer')
+@endsection

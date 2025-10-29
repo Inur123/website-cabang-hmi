@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', $post->title . ' - HMI CABANG PONOROGO')
+@section('content')
 
 <meta property="og:title" content="{{ $post->title ?? 'Default Title' }}">
 <meta property="og:description" content="{{ Str::limit(strip_tags($post->content ?? 'Default Description'), 150) }}">
@@ -7,7 +9,7 @@
 <meta property="og:type" content="article">
 
 
-@include('layouts.header')
+
 
 <div class="container mx-auto px-6 py-12">
     <div class="grid lg:grid-cols-3 gap-12">
@@ -83,4 +85,4 @@
         document.getElementById('see-less-btn').classList.add('hidden');
     });
 </script>
-@include('layouts.footer')
+@endsection

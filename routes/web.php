@@ -6,9 +6,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoryController;
 
-Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/', [WelcomeController::class, 'index'])->name('home');
 
-Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::get('/profile/sejarah', [ProfileController::class, 'sejarah'])->name('profile.sejarah');
