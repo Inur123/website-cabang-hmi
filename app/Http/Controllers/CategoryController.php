@@ -14,7 +14,7 @@ class CategoryController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
 
         // Ambil postingan dalam kategori tersebut
-        $posts = $category->posts()->paginate(5); // Menampilkan 10 postingan per kategori
+        $posts = $category->posts()->paginate(1); // Menampilkan 10 postingan per kategori
 
         // Ambil semua kategori untuk sidebar atau navigasi
 

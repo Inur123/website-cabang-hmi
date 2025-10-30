@@ -1,3 +1,4 @@
+<!-- filepath: /Users/muhammadzainurroziqin/Documents/coding/website-cabang-hmi/resources/views/blog/index.blade.php -->
 @extends('layouts.app')
 @section('title', 'Blog - HMI CABANG PONOROGO')
 @section('content')
@@ -15,7 +16,7 @@
 
     <!-- Posts Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        @foreach ($posts->sortByDesc('published_at') as $index => $post)
+        @foreach ($posts as $index => $post)
         <article class="group relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 dark:border-gray-700 hover:border-green-500 dark:hover:border-green-500 transform hover:-translate-y-2 transition-all duration-500"
                  data-aos="zoom-in"
                  data-aos-delay="{{ $index * 100 }}">
@@ -60,7 +61,7 @@
                         {!! $post->title !!}
                     </h2>
 
-                    <!-- Excerpt (Optional) -->
+                    <!-- Excerpt -->
                     <p class="text-gray-600 dark:text-gray-300 line-clamp-3 mb-4">
                         {!! Str::limit(strip_tags($post->content), 120) !!}
                     </p>
@@ -73,9 +74,6 @@
                         </svg>
                     </div>
                 </div>
-
-                <!-- Bottom Accent Line -->
-                <div class="h-1 bg-gradient-to-r from-green-500 via-teal-600 to-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </a>
         </article>
         @endforeach
@@ -92,35 +90,103 @@
     </div>
     @endif
 
-    <!-- Pagination -->
-    <div class="mt-12" data-aos="fade-up">
-        {{ $posts->links() }}
+    <!-- Modern Pagination -->
+    @if($posts->hasPages())
+    <div class="mt-16">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <!-- Page Info -->
+                <div class="text-sm text-gray-600 dark:text-gray-400">
+                    Menampilkan
+                    <span class="font-semibold text-gray-900 dark:text-white">{{ $posts->firstItem() }}</span> -
+                    <span class="font-semibold text-gray-900 dark:text-white">{{ $posts->lastItem() }}</span> dari
+                    <span class="font-semibold text-gray-900 dark:text-white">{{ $posts->total() }}</span> artikel
+                </div>
+
+                <!-- Pagination Links -->
+                <nav class="flex items-center gap-2">
+                    <!-- Previous Button -->
+                    @if ($posts->onFirstPage())
+                        <span class="px-3 sm:px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed flex items-center gap-2 font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            <span class="hidden sm:inline">Prev</span>
+                        </span>
+                    @else
+                        <a href="{{ $posts->previousPageUrl() }}" class="px-3 sm:px-4 py-2 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-gradient-to-r hover:from-green-600 hover:to-teal-600 hover:text-white hover:border-transparent shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            <span class="hidden sm:inline">Prev</span>
+                        </a>
+                    @endif
+
+                    <!-- Page Numbers (Desktop Only) -->
+                    <div class="hidden md:flex items-center gap-2">
+                        @php
+                            $start = max($posts->currentPage() - 2, 1);
+                            $end = min($start + 4, $posts->lastPage());
+                            $start = max($end - 4, 1);
+                        @endphp
+
+                        @if($start > 1)
+                            <a href="{{ $posts->url(1) }}" class="px-4 py-2 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-green-50 dark:hover:bg-green-900/20 hover:border-green-500 dark:hover:border-green-400 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 transform hover:scale-105">
+                                1
+                            </a>
+                            @if($start > 2)
+                                <span class="px-2 text-gray-500 dark:text-gray-400">...</span>
+                            @endif
+                        @endif
+
+                        @for ($page = $start; $page <= $end; $page++)
+                            @if ($page == $posts->currentPage())
+                                <span class="px-4 py-2 rounded-xl bg-gradient-to-r from-green-600 to-teal-600 text-white font-bold shadow-lg transform scale-110 border-2 border-green-400">
+                                    {{ $page }}
+                                </span>
+                            @else
+                                <a href="{{ $posts->url($page) }}" class="px-4 py-2 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-green-50 dark:hover:bg-green-900/20 hover:border-green-500 dark:hover:border-green-400 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 transform hover:scale-105">
+                                    {{ $page }}
+                                </a>
+                            @endif
+                        @endfor
+
+                        @if($end < $posts->lastPage())
+                            @if($end < $posts->lastPage() - 1)
+                                <span class="px-2 text-gray-500 dark:text-gray-400">...</span>
+                            @endif
+                            <a href="{{ $posts->url($posts->lastPage()) }}" class="px-4 py-2 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-green-50 dark:hover:bg-green-900/20 hover:border-green-500 dark:hover:border-green-400 hover:text-green-600 dark:hover:text-green-400 font-medium transition-all duration-300 transform hover:scale-105">
+                                {{ $posts->lastPage() }}
+                            </a>
+                        @endif
+                    </div>
+
+                    <!-- Mobile Current Page Indicator -->
+                    <div class="md:hidden px-4 py-2 rounded-xl bg-gradient-to-r from-green-600 to-teal-600 text-white font-bold shadow-lg">
+                        {{ $posts->currentPage() }} / {{ $posts->lastPage() }}
+                    </div>
+
+                    <!-- Next Button -->
+                    @if ($posts->hasMorePages())
+                        <a href="{{ $posts->nextPageUrl() }}" class="px-3 sm:px-4 py-2 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-gradient-to-r hover:from-green-600 hover:to-teal-600 hover:text-white hover:border-transparent shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 font-medium">
+                            <span class="hidden sm:inline">Next</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    @else
+                        <span class="px-3 sm:px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed flex items-center gap-2 font-medium">
+                            <span class="hidden sm:inline">Next</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    @endif
+                </nav>
+            </div>
+        </div>
     </div>
+    @endif
 </div>
-
-<!-- Custom Pagination Style -->
-<style>
-    /* Pagination custom styling */
-    nav[role="navigation"] {
-        @apply flex justify-center items-center gap-2;
-    }
-
-    nav[role="navigation"] span,
-    nav[role="navigation"] a {
-        @apply px-4 py-2 rounded-lg font-medium transition-all duration-300;
-    }
-
-    nav[role="navigation"] a {
-        @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-green-50 dark:hover:bg-green-900 hover:border-green-500 dark:hover:border-green-500 hover:text-green-600 dark:hover:text-green-400;
-    }
-
-    nav[role="navigation"] span[aria-current="page"] {
-        @apply bg-gradient-to-r from-green-600 to-teal-600 text-white border-transparent shadow-lg;
-    }
-
-    nav[role="navigation"] span[aria-disabled="true"] {
-        @apply bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-600 cursor-not-allowed;
-    }
-</style>
 
 @endsection

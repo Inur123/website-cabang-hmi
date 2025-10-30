@@ -1,5 +1,6 @@
+
 <nav id="popup"
-    class="flex items-center justify-between px-6 py-4 border-b dark:border-gray-700 sticky top-0 z-10 bg-white dark:bg-gray-800">
+    class="flex items-center justify-between px-6 py-4 border-b dark:border-gray-700 sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
 
     <!-- ========== DESKTOP NAVIGATION ========== -->
     <div class="hidden md:flex items-center justify-between w-full">
@@ -17,39 +18,38 @@
 
         <!-- Menu Links Desktop (Centered) -->
         <div class="flex space-x-8 flex-1 justify-center">
-    <a href="{{ route('home') }}"
-        class="{{ request()->is('/') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }}">
-        Home
-    </a>
-    <a href="{{ route('blog.index') }}"
-        class="{{ request()->is('blog*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }}">
-        Blog
-    </a>
-    <div class="relative">
-        <span id="profileBtnDesktop"
-            class="{{ request()->is('profile*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} flex items-center cursor-pointer">
-            Profile
-            <svg id="arrowIconDesktop" xmlns="http://www.w3.org/2000/svg"
-                class="ml-2 w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform"
-                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </span>
-        <!-- Dropdown Menu Desktop -->
-        <div id="dropdownMenuDesktop"
-            class="absolute left-0 hidden mt-2 w-56 bg-white border rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-            <a href="{{ route('profile.sejarah') }}"
-                class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-lg">
-                Sejarah
+            <a href="{{ route('home') }}"
+                class="{{ request()->is('/') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }}">
+                Home
             </a>
-            <a href="{{ route('profile.susunankepengurusan') }}"
-                class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-lg">
-                Susunan Kepengurusan
+            <a href="{{ route('blog.index') }}"
+                class="{{ request()->is('blog*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }}">
+                Blog
             </a>
+            <div class="relative">
+                <span id="profileBtnDesktop"
+                    class="{{ request()->is('profile*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} flex items-center cursor-pointer">
+                    Profile
+                    <svg id="arrowIconDesktop" xmlns="http://www.w3.org/2000/svg"
+                        class="ml-2 w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
+                <!-- Dropdown Menu Desktop -->
+                <div id="dropdownMenuDesktop"
+                    class="absolute left-0 hidden mt-2 w-56 bg-white border rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 z-50">
+                    <a href="{{ route('profile.sejarah') }}"
+                        class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-lg">
+                        Sejarah
+                    </a>
+                    <a href="{{ route('profile.susunankepengurusan') }}"
+                        class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-lg">
+                        Susunan Kepengurusan
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
 
         <!-- Dark Mode Toggle Desktop -->
         <div class="flex items-center justify-end flex-1">
@@ -115,45 +115,45 @@
 
     <!-- Mobile Menu Dropdown -->
     <div id="menu"
-    class="md:hidden hidden flex-col absolute top-16 left-0 w-full bg-white dark:bg-gray-800 shadow-md border-t dark:border-gray-700">
+        class="md:hidden hidden flex-col absolute top-16 left-0 w-full bg-white dark:bg-gray-800 shadow-md border-t dark:border-gray-700 z-40">
 
-    <!-- Home -->
-    <a href="{{ route('home') }}"
-        class="{{ request()->is('/') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 border-b dark:border-gray-700">
-        Home
-    </a>
+        <!-- Home -->
+        <a href="{{ route('home') }}"
+            class="{{ request()->is('/') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 border-b dark:border-gray-700">
+            Home
+        </a>
 
-    <!-- Blog -->
-    <a href="{{ route('blog.index') }}"
-        class="{{ request()->is('blog*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 border-b dark:border-gray-700">
-        Blog
-    </a>
+        <!-- Blog -->
+        <a href="{{ route('blog.index') }}"
+            class="{{ request()->is('blog*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 border-b dark:border-gray-700">
+            Blog
+        </a>
 
-    <!-- Profile Dropdown -->
-    <div class="border-b dark:border-gray-700">
-        <span id="profileBtnMobile"
-            class="{{ request()->is('profile*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} flex items-center justify-between p-4 cursor-pointer">
-            Profile
-            <svg id="arrowIconMobile" xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform"
-                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </span>
+        <!-- Profile Dropdown -->
+        <div class="border-b dark:border-gray-700">
+            <span id="profileBtnMobile"
+                class="{{ request()->is('profile*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} flex items-center justify-between p-4 cursor-pointer">
+                Profile
+                <svg id="arrowIconMobile" xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </span>
 
-        <!-- Dropdown Menu Mobile -->
-        <div id="dropdownMenuMobile" class="hidden bg-gray-50 dark:bg-gray-700">
-            <a href="{{ route('profile.sejarah') }}"
-                class="block px-8 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">
-                Sejarah
-            </a>
-            <a href="{{ route('profile.susunankepengurusan') }}"
-                class="block px-8 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">
-                Susunan Kepengurusan
-            </a>
+            <!-- Dropdown Menu Mobile -->
+            <div id="dropdownMenuMobile" class="hidden bg-gray-50 dark:bg-gray-700">
+                <a href="{{ route('profile.sejarah') }}"
+                    class="block px-8 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">
+                    Sejarah
+                </a>
+                <a href="{{ route('profile.susunankepengurusan') }}"
+                    class="block px-8 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">
+                    Susunan Kepengurusan
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
 </nav>
 
