@@ -1,7 +1,7 @@
-<!-- filepath: /Users/muhammadzainurroziqin/Documents/coding/website-cabang-hmi/resources/views/layouts/sidebar.blade.php -->
+
 <div class="lg:col-span-1 space-y-8">
     <!-- Categories Card -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6" data-aos="fade-up">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6" >
         <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
@@ -61,7 +61,7 @@
     </div>
 
     <!-- Most Popular Posts Card -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6" >
         <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -72,8 +72,7 @@
             @foreach ($popularPosts as $index => $popularPost)
                 <a href="{{ route('blog.show', $popularPost->slug) }}"
                    class="group flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all duration-300"
-                   data-aos="fade-left"
-                   data-aos-delay="{{ ($index + 1) * 50 }}">
+                 >
                     <div class="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 shadow-md group-hover:shadow-xl transition-shadow duration-300">
                         <img src="{{ asset('storage/' . $popularPost->thumbnail) }}"
                             alt="{{ $popularPost->title }}"

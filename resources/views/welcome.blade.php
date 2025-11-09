@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home - HMI CABANG PONOROGO')
+@section('title', 'Hmi Cabang Ponorogo')
 @section('content')
 
     <style>
@@ -188,52 +188,7 @@
     </div>
 
     <!-- Stats Section -->
-    <div class="container mx-auto px-4 sm:px-6 py-8 sm:py-12 mb-6 sm:mb-10">
-        <div class="bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden">
-            <div class="grid md:grid-cols-3 gap-6 sm:gap-8 p-6 sm:p-8 md:p-12">
-                <div class="text-center group" data-aos="zoom-in">
-                    <div
-                        class="inline-block p-3 sm:p-4 bg-white/20 rounded-full mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-white mb-2">1000+</h3>
-                    <p class="text-sm sm:text-base text-green-100">Kader HMI Cabang Ponorogo</p>
-                </div>
 
-                <div class="text-center group" data-aos="zoom-in" data-aos-delay="100">
-                    <div
-                        class="inline-block p-3 sm:p-4 bg-white/20 rounded-full mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                        </svg>
-                    </div>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-white mb-2">18</h3>
-                    <p class="text-sm sm:text-base text-green-100">Komisariat</p>
-                </div>
-
-                <div class="text-center group" data-aos="zoom-in" data-aos-delay="200">
-                    <div
-                        class="inline-block p-3 sm:p-4 bg-white/20 rounded-full mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 14l9-5-9-5-9 5 9 5z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-white mb-2">5</h3>
-                    <p class="text-sm sm:text-base text-green-100">Master Of Training</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- About Section -->
     <div class="container mx-auto px-4 sm:px-6 py-8 sm:py-12">

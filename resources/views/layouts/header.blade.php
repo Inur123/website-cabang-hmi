@@ -1,4 +1,3 @@
-
 <nav id="popup"
     class="flex items-center justify-between px-6 py-4 border-b dark:border-gray-700 sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
 
@@ -22,17 +21,54 @@
                 class="{{ request()->is('/') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }}">
                 Home
             </a>
-            <a href="{{ route('blog.index') }}"
-                class="{{ request()->is('blog*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }}">
-                Blog
-            </a>
+
+            <!-- Blog Dropdown Desktop -->
+            <div class="relative">
+                <span id="blogBtnDesktop"
+                    class="{{ request()->is('blog*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} flex items-center cursor-pointer">
+                    Blog
+                    <svg id="arrowIconBlogDesktop" xmlns="http://www.w3.org/2000/svg"
+                        class="ml-2 w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
+                <!-- Dropdown Menu Blog Desktop -->
+                <div id="dropdownMenuBlogDesktop"
+                    class="absolute left-0 hidden mt-2 w-56 bg-white border rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 z-50 max-h-96 overflow-y-auto">
+                    <a href="{{ route('blog.index') }}"
+                        class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-lg font-semibold border-b dark:border-gray-600">
+                        Semua Artikel
+                    </a>
+                    @php
+                        $categories = \App\Models\Category::withCount('posts')
+                            ->having('posts_count', '>', 0)
+                            ->orderBy('name')
+                            ->get();
+                    @endphp
+                    @foreach ($categories as $category)
+                        <a href="{{ route('categories.show', $category->slug) }}"
+                            class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 {{ $loop->last ? 'rounded-b-lg' : '' }}">
+                            <div class="flex items-center justify-between">
+                                <span>{{ $category->name }}</span>
+                                <span
+                                    class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-0.5 rounded-full">
+                                    {{ $category->posts_count }}
+                                </span>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Profile Dropdown Desktop -->
             <div class="relative">
                 <span id="profileBtnDesktop"
                     class="{{ request()->is('profile*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} flex items-center cursor-pointer">
                     Profile
                     <svg id="arrowIconDesktop" xmlns="http://www.w3.org/2000/svg"
-                        class="ml-2 w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        class="ml-2 w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </span>
@@ -103,7 +139,8 @@
             <button id="menuToggle" onclick="toggleMenu()" class="text-gray-600 dark:text-gray-300">
                 <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
                 <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke-width="1.5" stroke="currentColor" class="size-6 hidden">
@@ -123,11 +160,38 @@
             Home
         </a>
 
-        <!-- Blog -->
-        <a href="{{ route('blog.index') }}"
-            class="{{ request()->is('blog*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} block p-4 border-b dark:border-gray-700">
-            Blog
-        </a>
+        <!-- Blog Dropdown Mobile -->
+        <div class="border-b dark:border-gray-700">
+            <span id="blogBtnMobile"
+                class="{{ request()->is('blog*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} flex items-center justify-between p-4 cursor-pointer">
+                Blog
+                <svg id="arrowIconBlogMobile" xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </span>
+
+            <!-- Dropdown Menu Blog Mobile -->
+            <div id="dropdownMenuBlogMobile" class="hidden bg-gray-50 dark:bg-gray-700 max-h-64 overflow-y-auto">
+                <a href="{{ route('blog.index') }}"
+                    class="block px-8 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 font-semibold border-b dark:border-gray-600">
+                    Semua Artikel
+                </a>
+                @foreach ($categories as $category)
+                    <a href="{{ route('categories.show', $category->slug) }}"
+                        class="block px-8 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">
+                        <div class="flex items-center justify-between">
+                            <span>{{ $category->name }}</span>
+                            <span
+                                class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-0.5 rounded-full">
+                                {{ $category->posts_count }}
+                            </span>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+        </div>
 
         <!-- Profile Dropdown -->
         <div class="border-b dark:border-gray-700">
@@ -135,8 +199,8 @@
                 class="{{ request()->is('profile*') ? 'text-green-600 dark:text-green-400 font-bold' : 'text-gray-600 dark:text-gray-300' }} flex items-center justify-between p-4 cursor-pointer">
                 Profile
                 <svg id="arrowIconMobile" xmlns="http://www.w3.org/2000/svg"
-                    class="w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    class="w-4 h-4 text-gray-600 dark:text-gray-300 transition-transform" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </span>
@@ -159,7 +223,25 @@
 
 <!-- ====== Script Dropdown & Menu ====== -->
 <script>
-    // ===== Desktop Dropdown =====
+    // ===== Desktop Blog Dropdown =====
+    const blogBtnDesktop = document.getElementById('blogBtnDesktop');
+    const dropdownMenuBlogDesktop = document.getElementById('dropdownMenuBlogDesktop');
+    const arrowIconBlogDesktop = document.getElementById('arrowIconBlogDesktop');
+
+    blogBtnDesktop.addEventListener('click', () => {
+        dropdownMenuBlogDesktop.classList.toggle('hidden');
+        arrowIconBlogDesktop.classList.toggle('rotate-180');
+    });
+
+    // Klik di luar dropdown blog desktop untuk menutup
+    document.addEventListener('click', (e) => {
+        if (!blogBtnDesktop.contains(e.target) && !dropdownMenuBlogDesktop.contains(e.target)) {
+            dropdownMenuBlogDesktop.classList.add('hidden');
+            arrowIconBlogDesktop.classList.remove('rotate-180');
+        }
+    });
+
+    // ===== Desktop Profile Dropdown =====
     const profileBtnDesktop = document.getElementById('profileBtnDesktop');
     const dropdownMenuDesktop = document.getElementById('dropdownMenuDesktop');
     const arrowIconDesktop = document.getElementById('arrowIconDesktop');
@@ -177,7 +259,17 @@
         }
     });
 
-    // ===== Mobile Dropdown =====
+    // ===== Mobile Blog Dropdown =====
+    const blogBtnMobile = document.getElementById('blogBtnMobile');
+    const dropdownMenuBlogMobile = document.getElementById('dropdownMenuBlogMobile');
+    const arrowIconBlogMobile = document.getElementById('arrowIconBlogMobile');
+
+    blogBtnMobile.addEventListener('click', () => {
+        dropdownMenuBlogMobile.classList.toggle('hidden');
+        arrowIconBlogMobile.classList.toggle('rotate-180');
+    });
+
+    // ===== Mobile Profile Dropdown =====
     const profileBtnMobile = document.getElementById('profileBtnMobile');
     const dropdownMenuMobile = document.getElementById('dropdownMenuMobile');
     const arrowIconMobile = document.getElementById('arrowIconMobile');

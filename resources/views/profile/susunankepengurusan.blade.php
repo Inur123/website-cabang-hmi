@@ -1,4 +1,3 @@
-<!-- filepath: /Users/muhammadzainurroziqin/Documents/coding/website-cabang-hmi/resources/views/profile/susunankepengurusan.blade.php -->
 @extends('layouts.app')
 @section('title', 'Susunan Kepengurusan - HMI CABANG PONOROGO')
 @section('content')
@@ -8,8 +7,8 @@
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <!-- Header Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8"
-                    data-aos="fade-up">
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8">
                     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
                         <div
                             class="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl bg-gradient-to-r from-green-600 to-teal-600 flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -24,7 +23,7 @@
                                 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white leading-tight">
                                 Susunan Kepengurusan
                             </h1>
-                            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">Periode 2024-2026</p>
+                            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">Periode 2025-2026</p>
                         </div>
                     </div>
                 </div>
@@ -32,8 +31,8 @@
                 <!-- Ketua & Wakil Section -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <!-- Ketua Umum -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-300">
                         <div
                             class="relative h-36 sm:h-40 md:h-48 bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center overflow-hidden">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300">
@@ -51,8 +50,11 @@
                             </span>
                             <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2">Nanda Dwi
                                 Yanuari</h3>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Universitas Islam Negeri (UIN)
-                                Kiai Ageng Muhammad Besari Ponorogo</p>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                                Universitas Islam Negeri (UIN) Kiai Ageng Muhammad Besari Ponorogo
+                                <span class="font-bold text-green-600 dark:text-green-400">(Alumni)</span>
+                            </p>
+
                             <div class="flex items-center justify-center gap-2 mt-3 sm:mt-4">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="h-3 w-3 sm:h-4 sm:w-4 text-pink-500 flex-shrink-0" viewBox="0 0 24 24"
@@ -68,15 +70,15 @@
 
 
                     <!-- Sekretaris Umum -->
-                    <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-300">
                         <div
                             class="relative h-36 sm:h-40 md:h-48 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center overflow-hidden">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300">
                             </div>
                             <div
                                 class="relative z-10 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center border-2 sm:border-4 border-white shadow-xl group-hover:scale-110 transition-transform duration-300 overflow-hidden">
-                                <img src="{{ asset('template/images/hafidz.png') }}" alt="Hafidz Aziz Ashwijuwan"
+                                <img src="{{ asset('template/images/sekum.jpeg') }}" alt="Hafidz Aziz Ashwijuwan"
                                     class="w-full h-full object-cover rounded-full">
                             </div>
                         </div>
@@ -88,6 +90,7 @@
                             <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1 sm:mb-2">Hafidz Aziz
                                 Ashwijuwan</h3>
                             <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Universitas Muhammadiyah Ponorogo
+                                 <span class="font-bold text-green-600 dark:text-green-400">(Alumni)</span>
                             </p>
                             <div class="flex items-center justify-center gap-2 mt-3 sm:mt-4">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -101,8 +104,8 @@
 
                         </div>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-300"
-                        data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-300">
                         <div
                             class="relative h-36 sm:h-40 md:h-48 bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center overflow-hidden">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300">
@@ -137,8 +140,8 @@
 
 
                 <!-- Bidang Section -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6 lg:p-8"
-                    data-aos="fade-up" data-aos-delay="300">
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 sm:p-6 lg:p-8">
                     <h2
                         class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7 text-green-600 flex-shrink-0"
@@ -151,8 +154,8 @@
 
                     <div class="space-y-4 sm:space-y-6">
                         <!-- Bidang 1: Pembinaan Anggota -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="400">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -201,8 +204,8 @@
                         </div>
 
                         <!-- Bidang 2: Pembinaan Aparatur Organisasi -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="450">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-orange-600 to-red-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -251,8 +254,8 @@
                         </div>
 
                         <!-- Bidang 3: Perguruan Tinggi, Kemahasiswaan Dan Kepemudaan -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="500">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -304,8 +307,8 @@
                         </div>
 
                         <!-- Bidang 4: Kewirausahaan Dan Pengembangan Profesi -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="550">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-yellow-600 to-orange-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -354,8 +357,8 @@
                         </div>
 
                         <!-- Bidang 5: Pemberdayaan Perempuan -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="600">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -404,8 +407,8 @@
                         </div>
 
                         <!-- Bidang 6: Partisipasi Pembangunan Daerah -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="650">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-green-600 to-teal-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -454,8 +457,8 @@
                         </div>
 
                         <!-- Bidang 7: Digitalisasi Dan Inovasi -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="700">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-indigo-600 to-blue-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -504,8 +507,8 @@
                         </div>
 
                         <!-- Bidang 8: Kelautan Dan Agraria -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="750">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-teal-600 to-cyan-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -554,8 +557,8 @@
                         </div>
 
                         <!-- Bidang 9: Hukum Dan HAM -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="800">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-red-600 to-pink-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -604,8 +607,8 @@
                         </div>
 
                         <!-- Bidang 10: Kajian Ilmiah Dan Riset -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="850">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -654,8 +657,8 @@
                         </div>
 
                         <!-- Bidang 11: Pengelolaan SDA Dan Lingkungan Hidup -->
-                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300"
-                            data-aos="fade-right" data-aos-delay="900">
+                        <div
+                            class="border border-gray-200 dark:border-gray-700 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-green-500 dark:hover:border-green-400 transition-all duration-300">
                             <div class="flex items-start gap-3 sm:gap-4 mb-4">
                                 <div
                                     class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-r from-green-600 to-lime-600 flex items-center justify-center text-white flex-shrink-0 shadow-md">
@@ -707,8 +710,8 @@
 
 
                 <!-- Contact CTA -->
-                <div class="bg-gradient-to-r from-green-600 to-teal-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white text-center shadow-lg mt-6 sm:mt-8"
-                    data-aos="fade-up" data-aos-delay="700">
+                <div
+                    class="bg-gradient-to-r from-green-600 to-teal-600 rounded-xl sm:rounded-2xl p-6 sm:p-8 text-white text-center shadow-lg mt-6 sm:mt-8">
                     <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Ingin Bergabung?</h3>
                     <p class="text-sm sm:text-base mb-4 sm:mb-6 opacity-90">Jadilah bagian dari keluarga besar HMI Cabang
                         Ponorogo</p>
